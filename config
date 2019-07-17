@@ -1,0 +1,29 @@
+<html>
+<body>
+
+<script src="node_modules/@microsoft/teams-js@1.4.1/dist/MicrosoftTeams.min.js"></script>
+
+<script type="text/javascript">  
+
+microsoftTeams.initialize();
+microsoftTeams.settings.registerOnSaveHandler(function(saveEvent){
+  
+       microsoftTeams.settings.setSettings({
+         entityId: "project",
+         contentUrl: "https://garagehackbox.azurewebsites.net/hackathons/1857/projects/81943",
+         suggestedDisplayName: "Project",
+         websiteUrl: "https://garagehackbox.azurewebsites.net/hackathons/1857/projects",
+      });
+    
+    }
+
+    saveEvent.notifySuccess();
+});
+
+function onClick() {
+    microsoftTeams.settings.setValidityState(true);
+}
+
+</script>
+</body>
+</html>
